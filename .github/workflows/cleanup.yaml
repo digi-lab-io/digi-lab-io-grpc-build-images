@@ -1,0 +1,22 @@
+name: cleanup-jobs
+
+permissions:
+  packages: write
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  cleanup-docker-images:
+    name: cleanup-docker-images
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/delete-package-versions@v4
+        name: cleanup-docker-images
+        with:
+          package-name: 'digi-lab-io-grpc-gen-dart'
+          package-type: 'container'
+          token: ${{ secrets.GHCR_TOKEN }}
+          min-versions-to-keep: 3

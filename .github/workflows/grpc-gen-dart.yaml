@@ -1,0 +1,30 @@
+name: grpc-gen-dart
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - grpc-gen-dart/**/*
+jobs:
+  build-grpc-gen-dart:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ secrets.GHCR_TOKEN_NAME }}
+          password: ${{ secrets.GHCR_TOKEN }}
+
+      - name: Git checkout
+        uses: actions/checkout@v3
+
+      - name: Build image
+        run: make -C grpc-gen-dart build
+
+      - name: Push image
+        run: make -C grpc-gen-dart push
+
+      - name: Build dart example
+        run: make -C grpc-gen-dart generate-example

@@ -1,0 +1,14 @@
+@startuml protobuf-complex-gen-process
+
+title Complex code generation from .proto files
+start
+
+:Define data structure in .proto file;
+:Install Protocol Buffers compiler on local machine for each language;
+:Compile .proto file;
+:Integrate the code in your application;
+:Repeat process for updates or changes;
+
+stop
+
+@enduml

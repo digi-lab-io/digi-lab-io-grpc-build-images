@@ -1,0 +1,13 @@
+@startuml digi-lab-io-grpc-gen-overview_v1.puml
+
+title Easy code generation from .proto files
+
+start
+
+:Generate via bash command;
+:Integrate the code in your application;
+:Repeat process for updates or changes;
+
+stop
+
+@enduml

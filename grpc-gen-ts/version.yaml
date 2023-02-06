@@ -1,0 +1,3 @@
+ts_proto_version: 1.138.0
+grpc_gen_version: 1.0.2
+protobuf_version: 21.12
