@@ -15,23 +15,23 @@ export 'book.pb.dart';
 
 class BookMethodsClient extends $grpc.Client {
   static final _$createBook = $grpc.ClientMethod<$0.Book, $0.Book>(
-      '/BookMethods/CreateBook',
+      '/book.BookMethods/CreateBook',
       ($0.Book value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Book.fromBuffer(value));
   static final _$getAllBooks = $grpc.ClientMethod<$0.Empty, $0.Books>(
-      '/BookMethods/GetAllBooks',
+      '/book.BookMethods/GetAllBooks',
       ($0.Empty value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Books.fromBuffer(value));
   static final _$getBook = $grpc.ClientMethod<$0.BookId, $0.Book>(
-      '/BookMethods/GetBook',
+      '/book.BookMethods/GetBook',
       ($0.BookId value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Book.fromBuffer(value));
   static final _$deleteBook = $grpc.ClientMethod<$0.BookId, $0.Empty>(
-      '/BookMethods/DeleteBook',
+      '/book.BookMethods/DeleteBook',
       ($0.BookId value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Empty.fromBuffer(value));
   static final _$editBook = $grpc.ClientMethod<$0.Book, $0.Book>(
-      '/BookMethods/EditBook',
+      '/book.BookMethods/EditBook',
       ($0.Book value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.Book.fromBuffer(value));
 
@@ -67,7 +67,7 @@ class BookMethodsClient extends $grpc.Client {
 }
 
 abstract class BookMethodsServiceBase extends $grpc.Service {
-  $core.String get $name => 'BookMethods';
+  $core.String get $name => 'book.BookMethods';
 
   BookMethodsServiceBase() {
     $addMethod($grpc.ServiceMethod<$0.Book, $0.Book>(

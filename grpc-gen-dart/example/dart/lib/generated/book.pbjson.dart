@@ -40,9 +40,9 @@ final $typed_data.Uint8List bookDescriptor = $convert.base64Decode('CgRCb29rEg4K
 const Books$json = const {
   '1': 'Books',
   '2': const [
-    const {'1': 'books', '3': 1, '4': 3, '5': 11, '6': '.Book', '10': 'books'},
+    const {'1': 'books', '3': 1, '4': 3, '5': 11, '6': '.book.Book', '10': 'books'},
   ],
 };
 
 /// Descriptor for `Books`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List booksDescriptor = $convert.base64Decode('CgVCb29rcxIbCgVib29rcxgBIAMoCzIFLkJvb2tSBWJvb2tz');
+final $typed_data.Uint8List booksDescriptor = $convert.base64Decode('CgVCb29rcxIgCgVib29rcxgBIAMoCzIKLmJvb2suQm9va1IFYm9va3M=');
