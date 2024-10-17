@@ -34,16 +34,16 @@ push:
 
 # protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_out=. ./simple.proto
 generate-example:
-	@source .bashrc && \
-	mkdir -p ./example/ts/src/generated/ && rm -rf ./example/ts/src/generated/* && \
-    grpc-gen-ts -I=example/proto \
-    	--ts_proto_opt=addGrpcMetadata=true \
-    	--ts_proto_opt=returnObservable=true \
-    	--ts_proto_opt=nestJs=true \
-    	--ts_proto_out=./example/ts/src/generated/ \
-    	--ts_proto_opt=addNestjsRestParameter=true \
-    	example/proto/*.proto \
-    	google/protobuf/timestamp.proto
+	@mkdir -p ./example/ts/src/generated/ && rm -rf ./example/ts/src/generated/*
+	@docker run --rm -v $(shell pwd):/digi-lab-io/grpc-gen-ts ${IMAGE_TAG_SEMVER} \
+		-I=example/proto \
+		--ts_proto_opt=addGrpcMetadata=true \
+		--ts_proto_opt=returnObservable=true \
+		--ts_proto_opt=nestJs=true \
+		--ts_proto_out=./example/ts/src/generated/ \
+		--ts_proto_opt=addNestjsRestParameter=true \
+		example/proto/*.proto \
+		google/protobuf/timestamp.proto
 
 bump-patch:
 	@echo "Bumping patch version from $(GRPC_GEN_VERSION) to $$(echo $(GRPC_GEN_VERSION) | awk -F. '{$$NF=$$NF+1;} 1' OFS=.)"

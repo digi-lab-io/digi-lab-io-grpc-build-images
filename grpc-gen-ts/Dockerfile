@@ -22,10 +22,12 @@ ARG ts_proto_version
 # Install necessary dependencies
 RUN apk add --no-cache nodejs npm
 
+COPY --from=builder /root/.local /usr/local
 COPY --from=builder /root/.local /root/.local
 
-ENV PATH="$PATH:/root/.local/bin"
+ENV PATH="$PATH:/usr/local/bin"
 
 RUN npm install -g ts-proto@${ts_proto_version}
 
-ENTRYPOINT ["/usr/bin/protoc"]
+ENTRYPOINT ["protoc"]
+CMD []
