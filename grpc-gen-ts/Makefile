@@ -15,8 +15,15 @@ ifeq (,$(findstring nerdctl,$(CCMD)))
 	CCMD = $(shell command -v docker 2> /dev/null)
 endif
 
+echo:
+	@echo "PROTOBUF_VERSION: $(PROTOBUF_VERSION)"
+	@echo "TS_PROTO_VERSION: $(TS_PROTO_VERSION)"
+	@echo "GRPC_GEN_VERSION: $(GRPC_GEN_VERSION)"
+	@echo "IMAGE_TAG_LATEST: $(IMAGE_TAG_LATEST)"
+	@echo "IMAGE_TAG_SEMVER: $(IMAGE_TAG_SEMVER)"
+
 build:
-	@${CCMD} build --no-cache --build-arg pb_version=$(PROTOBUF_VERSION) --build-arg ts_proto_version=$(TS_PROTO_VERSION) -t $(IMAGE_TAG_SEMVER) .
+	@${CCMD} build --no-cache --build-arg protobuf_version=$(PROTOBUF_VERSION) --build-arg ts_proto_version=$(TS_PROTO_VERSION) -t $(IMAGE_TAG_SEMVER) .
 
 push:
 	@${CCMD} tag ${IMAGE_TAG_SEMVER} ${IMAGE_TAG_LATEST}

@@ -15,7 +15,7 @@ ifeq (,$(findstring nerdctl,$(CCMD)))
 endif
 
 build:
-	@${CCMD} build --no-cache --build-arg pb_version=$(PROTOBUF_VERSION) -t $(IMAGE_TAG_SEMVER) .
+	@${CCMD} build --no-cache --build-arg protobuf_version=$(PROTOBUF_VERSION) -t $(IMAGE_TAG_SEMVER) .
 
 push:
 	@${CCMD} tag ${IMAGE_TAG_SEMVER} ${IMAGE_TAG_LATEST}
