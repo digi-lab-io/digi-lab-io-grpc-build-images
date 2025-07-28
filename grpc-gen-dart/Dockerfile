@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM google/dart:2.15.1
+FROM --platform=$BUILDPLATFORM dart:3.8.2
 
 LABEL vendor="digi-lab.io"
 LABEL org.opencontainers.image.source=https://github.com/digi-lab-io/digi-lab-io-grpc-build-images
