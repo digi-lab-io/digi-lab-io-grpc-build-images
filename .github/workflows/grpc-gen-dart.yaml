@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - grpc-gen-dart/**/*
+permissions:
+  contents: read
+  packages: write
 jobs:
   build-grpc-gen-dart:
     runs-on: ubuntu-latest
