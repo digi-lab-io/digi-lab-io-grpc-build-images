@@ -1,5 +1,9 @@
 name: grpc-gen-ts
 
+# This workflow builds and pushes the grpc-gen-python Docker image
+# and generates the Python example code.
+# It is triggered on pushes to the main branch that affect the grpc-gen-python directory.
+
 permissions:
   contents: read
   packages: write

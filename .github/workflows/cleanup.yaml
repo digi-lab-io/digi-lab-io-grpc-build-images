@@ -21,3 +21,17 @@ jobs:
           package-type: 'container'
           token: ${{ secrets.GHCR_TOKEN }}
           min-versions-to-keep: 3
+      - uses: actions/delete-package-versions@v4
+        name: cleanup-docker-images
+        with:
+          package-name: 'digi-lab-io-grpc-gen-python'
+          package-type: 'container'
+          token: ${{ secrets.GHCR_TOKEN }}
+          min-versions-to-keep: 3
+      - uses: actions/delete-package-versions@v4
+        name: cleanup-docker-images
+        with:
+          package-name: 'digi-lab-io-grpc-gen-ts'
+          package-type: 'container'
+          token: ${{ secrets.GHCR_TOKEN }}
+          min-versions-to-keep: 3

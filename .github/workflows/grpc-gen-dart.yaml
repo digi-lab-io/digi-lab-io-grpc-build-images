@@ -1,5 +1,9 @@
 name: grpc-gen-dart
 
+# This workflow builds and pushes the grpc-gen-dart Docker image
+# and generates the Dart example code.
+# It is triggered on pushes to the main branch that affect the grpc-gen-dart directory.
+
 permissions:
   contents: read
   packages: write
