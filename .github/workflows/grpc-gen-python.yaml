@@ -1,7 +1,8 @@
 name: grpc-gen-python
+permissions:
+  contents: read
 
 on:
-  push:
     branches:
       - main
     paths:
