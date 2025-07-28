@@ -1,6 +1,7 @@
 name: cleanup-jobs
 
 permissions:
+  contents: read
   packages: write
 
 on:

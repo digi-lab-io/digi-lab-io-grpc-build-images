@@ -1,14 +1,16 @@
 name: grpc-gen-dart
 
+permissions:
+  contents: read
+  packages: write
+
 on:
   push:
     branches:
       - main
     paths:
       - grpc-gen-dart/**/*
-permissions:
-  contents: read
-  packages: write
+
 jobs:
   build-grpc-gen-dart:
     runs-on: ubuntu-latest

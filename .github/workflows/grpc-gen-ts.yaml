@@ -1,4 +1,5 @@
 name: grpc-gen-ts
+
 permissions:
   contents: read
   packages: write
@@ -9,6 +10,7 @@ on:
       - main
     paths:
       - grpc-gen-ts/**/*
+
 jobs:
   build-grpc-gen-ts:
     runs-on: ubuntu-latest

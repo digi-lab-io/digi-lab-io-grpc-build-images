@@ -1,12 +1,16 @@
 name: grpc-gen-python
+
 permissions:
   contents: read
+  packages: write
 
 on:
+  push:
     branches:
       - main
     paths:
       - grpc-gen-python/**/*
+
 jobs:
   build-grpc-gen-python:
     runs-on: ubuntu-latest
